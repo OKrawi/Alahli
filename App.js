@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import 'react-native-gesture-handler';
 
-// Necessary for translator to work. Do not delete!
 import i18 from './languages/i18n';
 
 import { ThemeProvider } from './contexts/ThemeContext';
