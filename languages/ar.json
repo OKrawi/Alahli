@@ -1,0 +1,93 @@
+{
+    "translation":{
+        "alahli_calc": {
+            "alahli_calc_title": "حاسبة التمويل العقاري",
+            "alahli_calc_yes": "نعم",
+            "alahli_calc_no": "لا",
+            "alahli_calc_redf_qualified": "مستحق للدعم من صندوق التنمية العقارية؟",
+            "alahli_calc_personal_loan_question": "لديك تمويل شخصي من البنك الأهلي حالياً؟",
+            "alahli_calc_personal_loan_question_yes_installment": "القسط الشهري للتمويل الشخصي:",
+            "alahli_calc_personal_loan_question_yes_months": "عدد الأشهر المتبقية لإنتهاء التمويل الشخصي:",
+            "alahli_calc_birthdate": "تاريخ الميلاد:",
+            "alahli_calc_birthdate_hijri_toggle": "هجري",
+            "alahli_calc_salary": "الدخل الشهري:",
+            "alahli_calc_obligation": "الإلتزامات الأخرى بالريال شهرياً:",
+            "alahli_calc_job": "المهنة:",
+            "alahli_calc_choose_job" : "اختر مهنتك",
+            "alahli_calc_job_military_rank": "الرتبة:",
+            "alahli_calc_choose_military_rank" : "اختر رتبتك",
+            "alahli_calc_calculate_button": "احسب",
+            "alahli_calc_output_eligible_loan_amount": "مبلغ التمويل الأقصى وفق المدخلات:",
+            "alahli_calc_output_total_loan_cost": "إجمالي مبلغ التمويل والأرباح:",
+            "alahli_calc_output_eligible_financing_tenor_months": "مدة التمويل القصوى (شهور)",
+            "alahli_calc_output_eligible_financing_tenor_years": "مدة التمويل القصوى (سنوات)",
+            "alahli_calc_output_result_details_installment_key": "مبلغ القسط الشهري (ريال)",
+            "alahli_calc_output_result_details_months_key": "عدد الأقساط الشهرية (شهر)",
+            "alahli_calc_output_recalculate_button": "احسب مجدداً",
+            "alahli_calc_output_apply_button": "تقديم طلب الآن",
+            "alahli_calc_output_riyal" : "ريال",
+            "alahli_calc_output_month" : "شهر",
+            "alahli_calc_output_year" : "سنة",
+            "alahli_calc_output_disclamer": "* المبالغ المعروضة أعلاه تقريبية حيث أن مبلغ التمويل النهائي يتم احتسابه بناء على التزامات العميل القائمة و معلومات الدخل الشهري عند التقدم بطلب التمويل من البنك الأهلي التجاري."
+        },
+        "job_fields": {
+            "civilian": "مدني",
+            "private": "قطاع خاص",
+            "military": "عسكري",
+            "retiree": "متقاعد"
+        },
+        "military_ranks": {
+            "private": "جندي",
+            "corporal": "عريف",
+            "vice_sergeant": "وكيل رقيب",
+            "sergeant": "رقيب",
+            "first_class_sergeant": "رقيب أول",
+            "master_sergeant": "رئيس رقباء",
+            "lieutenant": "ملازم",
+            "captain": "نقيب",
+            "major": "رائد",
+            "lieutenant_colonel": "مقدم",
+            "colonel": "عقيد",
+            "brigadier_general": "عميد",
+            "general": "لواء"
+        },
+        "validators": {
+            "numerical": "الرجاء إدخال قيمة صحيحة",
+            "date": "الرجاء إدخال تاريخ صحيح بالصيغة س س س س/ش ش/ي ي",
+            "date_placeholder": "س س س س/ش ش/ي ي",
+            "validator_job": "الرجاء اختيار المهنة",
+            "validator_rank": "الرجاء اختيار الرتبة"
+        },
+        "navigation":{
+            "calculator": "الحاسبة",
+            "settings": "الإعدادات",
+            "about_me": "عن المصمم"
+        },
+        "settings":{
+            "warning": "تحذير!",
+            "language_change_warning": "سيعاد تشغيل التطبيق. استمر؟",
+            "affirmative": "نعم",
+            "negative": "لا",
+            "select_lang": "اختر لغتك:",
+            "select_theme": "اختر ألوانك:",
+            "color_light": "أخضر",
+            "color_dark": "معتم",
+            "color_fuschia": "فوشيا"
+        },
+        "about_me":{
+            "greeting": "مرحباً!",
+            "intro": "اسمي أسامة كراوي وأنا مطور تطبيقات React Native. هذا التطبيق البسيط هو تحدي عقار \"حاسبة بنك الأهل للتمويل العقاري\".",
+            "prompt": "إذا أعجبك هذا التطيق وترغب بالتحدث معي, يمكنك الاتصال بي علي:",
+            "phone": "الجوال: 00966500198465   "
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

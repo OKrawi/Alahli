@@ -1,0 +1,84 @@
+{
+    "translation": {
+        "alahli_calc": {
+            "alahli_calc_title": "Home Financing Calculator",
+            "alahli_calc_yes": "Yes",
+            "alahli_calc_no": "No",
+            "alahli_calc_redf_qualified": "Qualified for support from the Real Estate Development Fund?",
+            "alahli_calc_personal_loan_question": "Do you have a personal loan from AlAhli Bank?",
+            "alahli_calc_personal_loan_question_yes_installment": "Monthly personal loan:",
+            "alahli_calc_personal_loan_question_yes_months": "Remaining personal loan (Months):",
+            "alahli_calc_birthdate": "Birthdate:",
+            "alahli_calc_birthdate_hijri_toggle": "Hirji",
+            "alahli_calc_salary": "Salary:",
+            "alahli_calc_obligation": "Other obligations (Riyal):",
+            "alahli_calc_job": "Job:",
+            "alahli_calc_choose_job": "Choose your job",
+            "alahli_calc_job_military_rank": "Rank:",
+            "alahli_calc_choose_military_rank": "Choose your rank",
+            "alahli_calc_calculate_button": "Calculate",
+            "alahli_calc_output_eligible_loan_amount": "Max eligalble loan amount:",
+            "alahli_calc_output_total_loan_cost": "Total amount of funding and profits:",
+            "alahli_calc_output_eligible_financing_tenor_months": "Maximum financing period (Months)",
+            "alahli_calc_output_eligible_financing_tenor_years": "Maximum financing period (years)",
+            "alahli_calc_output_result_details_installment_key": "Monthly Installment Amount (SAR)",
+            "alahli_calc_output_result_details_months_key": "Number of monthly installments (month)",
+            "alahli_calc_output_recalculate_button": "Recalculate",
+            "alahli_calc_output_apply_button": "Apply now",
+            "alahli_calc_output_riyal" : "Riyal",
+            "alahli_calc_output_month" : "Months",
+            "alahli_calc_output_year" : "Years",
+            "alahli_calc_output_disclamer": "*The above numbers are approximate. The final amount will be calculated from Alahli bank after applying for home financing."
+        },
+        "job_fields": {
+            "civilian": "Civilian",
+            "private": "Private",
+            "military": "Military",
+            "retiree": "Retiree"
+        },
+        "military_ranks": {
+            "private": "Private",
+            "corporal": "Corporal",
+            "vice_sergeant": "Vice Sergeant",
+            "sergeant": "Sergeant",
+            "first_class_sergeant": "First Class Sergeant",
+            "master_sergeant": "Master Sergeant",
+            "lieutenant": "Lieutenant",
+            "captain": "Captain",
+            "major": "Major",
+            "lieutenant_colonel": "Lieutenant Colonel",
+            "colonel": "Colonel",
+            "brigadier_general": "Brigadier General",
+            "general": "General"
+        },
+        "validators": {
+            "numerical": "Please enter a valid number",
+            "date": "Please enter a valid date DD/MM/YYYY",
+            "date_placeholder": "DD/MM/YYYY",
+            "validator_job": "Please select your job",
+            "validator_rank": "Please select your rank"
+        },
+        "navigation":{
+            "calculator": "Calculator",
+            "settings": "Settings",
+            "about_me": "About me"
+        },
+        "settings":{
+            "warning": "Warning!",
+            "language_change_warning": "App will restart. Continue",
+            "affirmative": "yes",
+            "negative": "no",
+            "select_lang": "Select your language:",
+            "select_theme": "Select your theme:",
+            "color_light": "Green",
+            "color_dark": "Dark",
+            "color_fuschia": "Fuschia"
+        },
+        "about_me":{
+            "greeting": "Hi!",
+            "intro": "My name is Ossama Krawi and I'm a React Native developer. This small application is Aqar's \"Alahli Bank Mortgage Calculator Challenge\".",
+            "prompt": "If you liked this demo and wish to contact me, you can reach me at:",
+            "phone": "Phone: 00966500198465   "
+        }
+    }
+}

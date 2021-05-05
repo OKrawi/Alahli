@@ -1,0 +1,51 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "start-prod": "NODE_ENV=production expo start -c",
+    "start-dev": "NODE_ENV=development expo start -c",
+    "android-build-pro": "NODE_ENV=production expo build:android",
+    "android-build-dev": "NODE_ENV=development expo build:android"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.15",
+    "@react-native-async-storage/async-storage": "^1.15.4",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/drawer": "^5.12.5",
+    "@react-navigation/native": "^5.9.4",
+    "@react-navigation/stack": "^5.14.4",
+    "expo": "~41.0.1",
+    "expo-app-loading": "^1.0.3",
+    "expo-status-bar": "~1.0.4",
+    "fiction-expo-restart": "^1.0.9",
+    "graphql": "^15.5.0",
+    "i18next": "^20.2.2",
+    "moment-hijri": "^2.1.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-i18next": "^11.8.15",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
+    "react-native-dropdown-picker": "^4.0.9",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-phone-call": "^1.0.9",
+    "react-native-reanimated": "~2.1.0",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "~3.0.0",
+    "react-native-web": "~0.13.12",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3"
+  },
+  "resolutions": {
+    "graphql": "^15.5.0"
+  },
+  "private": true
+}
