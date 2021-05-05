@@ -65,7 +65,7 @@
         },
         "settings":{
             "warning": "Warning!",
-            "language_change_warning": "App will restart. Continue",
+            "language_change_warning": "App will restart. Continue?",
             "affirmative": "yes",
             "negative": "no",
             "select_lang": "Select your language:",
