@@ -9,4 +9,3 @@ To build this project, simply enter:
 Or start it using expo with: 
 
 `expo start -c`
-
