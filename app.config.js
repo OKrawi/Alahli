@@ -5,6 +5,7 @@ export default {
   expo: {
     name: "Alahli",
     slug: "Alahli",
+    description: "Aqar Alahli Bank Mortgage Calculator Challenge",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/icon.png",

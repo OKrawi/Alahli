@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useReducer, useCallback, useRef } from 'react';
-import { ScrollView, View, StyleSheet, Alert, Text, Switch, TouchableOpacity, TouchableWithoutFeedback, ActivityIndicator } from 'react-native';
+import { ScrollView, View, StyleSheet, Alert, Text, TouchableOpacity, TouchableWithoutFeedback, ActivityIndicator } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useRTL } from '../contexts/RTLContext';
 import { useTheme } from '../contexts/ThemeContext';
 
-import { getEpochDate } from '../functions/CalculationFunctions';
 import * as calculatorActions from '../store/actions/calculation';
 import CalculationTypes from '../constants/CalculationTypes';
 
@@ -30,11 +29,10 @@ const formReducer = (state, action) => {
     for (const key in updatedValidities) {
       updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
     }
-
     return {
       formIsValid: updatedFormIsValid,
       inputValidities: updatedValidities,
-      inputValues: updatedValues
+      inputValues: updatedValues,
     };
   }
   return state;
@@ -43,7 +41,6 @@ const formReducer = (state, action) => {
 const calculatorScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
-  const [isHijriDate, setIsHijriDate] = useState(false);
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -57,10 +54,10 @@ const calculatorScreen = props => {
 
   const jobDropdown = useRef(null);
   const militaryDropdown = useRef(null);
-  
+
   const [jobDropdownPickerOpened, setjobDropdownPickerOpened] = useState(false);
   const [militaryDropdownPickerOpened, setmilitaryDropdownOpened] = useState(false);
-  
+
   const [formState, dispatchFormState] = useReducer(formReducer, {
     inputValues: {
       alahli_calc_personal_loan_question_yes_installment: '',
@@ -111,24 +108,17 @@ const calculatorScreen = props => {
     { label: t('military_ranks.general'), value: 'GENERAL' },
   ];
 
-  const flexDirection = rtl ? 'row' : 'row-reverse';
+  const flexDirection = rtl ? 'row-reverse' : 'row';
 
   useEffect(() => {
     if (error) {
-      Alert.alert('حدث خطأ!', error, [{ text: 'حسناً' }]);
+      Alert.alert(t('error.error_occured'), error, [{ text: t("error.ok") }]);
     }
   }, [error]);
 
   const submitHandler = async () => {
-    let action;
-    const birth_date = getEpochDate(formState.inputValues.alahli_calc_birthdate, isHijriDate);
-
     if (formState.formIsValid) {
-      action = calculatorActions.setCalculation({
-        ...formState.inputValues,
-        alahli_calc_birthdate: birth_date
-      });
-
+      const action = calculatorActions.setCalculation(formState.inputValues);
       setError(null);
       setIsLoading(true);
       try {
@@ -148,7 +138,7 @@ const calculatorScreen = props => {
         type: FORM_INPUT_UPDATE,
         value: inputValue,
         isValid: inputValidity,
-        input: inputIdentifier
+        input: inputIdentifier,
       });
     },
     [dispatchFormState]
@@ -164,21 +154,20 @@ const calculatorScreen = props => {
 
   if (isLoading) {
     return (
-      <View style={[styles.activityContainer, styles.horizontal]}>
+      <View style={styles.activityContainer}>
         <ActivityIndicator size="large" color={theme.primary} />
       </View>
     )
   }
 
-
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <TouchableWithoutFeedback
         onPress={() => {
-          if(jobDropdown.current.isOpen()){
+          if (jobDropdown.current.isOpen()) {
             jobDropdown.current.close();
           }
-          if (formState.inputValues.alahli_calc_job === "MILITARY" && militaryDropdown.current.isOpen()){
+          if (formState.inputValues.alahli_calc_job === "MILITARY" && militaryDropdown.current.isOpen()) {
             militaryDropdown.current.close();
           }
         }}>
@@ -227,50 +216,30 @@ const calculatorScreen = props => {
                 onInputChange={inputChangeHandler}
                 initialValue=""
                 initiallyValid={false}
-                onSubmitEditing={() => dateInput.current.focus()}
                 returnKeyType="next"
                 refs={monthsInput}
-                blurOnSubmit={false}
                 min={0}
               />
             </View>
             : null}
 
-          <View>
-            <Input
-              id="alahli_calc_birthdate"
-              label={t('alahli_calc.alahli_calc_birthdate')}
-              keyboardType="numeric"
-              required
-              date
-              maxLength={10}
-              isHijriDate={isHijriDate}
-              errorText={t('validators.date')}
-              onInputChange={inputChangeHandler}
-              initiallyValid={false}
-              placeholder={t('validators.date_placeholder')}
-              refs={dateInput}
-              returnKeyType="next"
-              blurOnSubmit={false}
-              onSubmitEditing={() => salaryInput.current.focus()}
-            />
-
-            <View style={{ ...styles.isHijriContainer, flexDirection: flexDirection }}>
-              <Text style={styles.isHijriText}>{t('alahli_calc.alahli_calc_birthdate_hijri_toggle')}</Text>
-              <Switch
-                trackColor={{ false: "#767577", true: theme.primary }}
-                thumbColor={isHijriDate ? "white" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                value={isHijriDate}
-                onValueChange={() => {
-                  setIsHijriDate(previousState => !previousState);
-                  inputChangeHandler('alahli_calc_birthdate', '', false);
-                  dateInput.current.clear();
-                  console.log(dateInput.current);
-                }}
-              />
-            </View>
-          </View>
+          <Input
+            id="alahli_calc_birthdate"
+            label={t('alahli_calc.alahli_calc_birthdate')}
+            keyboardType="numeric"
+            required
+            date
+            maxLength={10}
+            errorText={t('validators.date')}
+            onInputChange={inputChangeHandler}
+            initiallyValid={false}
+            placeholder={t('validators.date_placeholder')}
+            refs={dateInput}
+            returnKeyType="next"
+            blurOnSubmit={false}
+            icon="calendar"
+            onSubmitEditing={() => salaryInput.current.focus()}
+          />
 
           <Input
             id="alahli_calc_salary"
@@ -292,10 +261,10 @@ const calculatorScreen = props => {
             id="alahli_calc_obligation"
             label={t('alahli_calc.alahli_calc_obligation')}
             keyboardType="numeric"
+            numeric
             errorText={t('validators.numerical')}
             onInputChange={inputChangeHandler}
             initiallyValid={true}
-            numeric
             returnKeyType="done"
             refs={obligationInput}
           />
@@ -317,16 +286,14 @@ const calculatorScreen = props => {
               controller={(instance) => jobDropdown.current = instance}
               placeholder={t('alahli_calc.alahli_calc_choose_job')}
               dropDownMaxHeight={500}
-              style={rtl ? { flexDirection: 'row-reverse' } : {}}
+              style={{ flexDirection: flexDirection }}
               labelStyle={{
                 fontFamily: 'boutros',
                 fontSize: 15
               }}
               containerStyle={{ height: 40 }}
               style={{ backgroundColor: '#fafafa' }}
-              itemStyle={{
-                justifyContent: 'flex-start'
-              }}
+              itemStyle={{ justifyContent: rtl ? 'flex-end' : 'flex-start' }}
               dropDownStyle={{ backgroundColor: '#fafafa' }}
             />
           </View>
@@ -346,10 +313,10 @@ const calculatorScreen = props => {
               onChangeItem={item => {
                 inputChangeHandler('alahli_calc_job_military_rank', item.value, true);
               }}
-              style={rtl ? { flexDirection: 'row-reverse' } : {}}
+              style={{ flexDirection: flexDirection }}
               containerStyle={{ height: 40 }}
               style={{ backgroundColor: '#fafafa' }}
-              itemStyle={{ justifyContent: 'flex-start' }}
+              itemStyle={{ justifyContent: rtl ? 'flex-end' : 'flex-start' }}
               labelStyle={{
                 fontFamily: 'boutros',
                 fontSize: 15
@@ -369,7 +336,7 @@ const calculatorScreen = props => {
             <TouchableOpacity
               onPress={submitHandler}
               disabled={!formState.formIsValid}
-              style={formState.formIsValid ? {...styles.submitValidOpacity, backgroundColor: theme.primary} : styles.submitInvalidOpacity}>
+              style={formState.formIsValid ? { ...styles.submitValidOpacity, backgroundColor: theme.primary } : styles.submitInvalidOpacity}>
               <Text style={{ ...styles.submitButtonText, 'color': formState.formIsValid ? "white" : '#f5f5f5' }}>{t('alahli_calc.alahli_calc_calculate_button')}</Text>
             </TouchableOpacity>
           </View>
@@ -381,17 +348,16 @@ const calculatorScreen = props => {
 };
 
 const styles = StyleSheet.create({
+  activityContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 10
+  },
   container: {
     flex: 1,
     marginHorizontal: 10,
     marginVertical: 5,
-  },
-  isHijriContainer: {
-    justifyContent: 'flex-end',
-  },
-  isHijriText: {
-    fontSize: 14,
-    fontFamily: 'boutros'
   },
   militaryDropdownPickerContainer: {
     marginBottom: 20
@@ -437,7 +403,7 @@ const styles = StyleSheet.create({
     fontFamily: 'boutros',
     color: 'red',
     fontSize: 13
-  },
+  }
 });
 
 export default calculatorScreen;

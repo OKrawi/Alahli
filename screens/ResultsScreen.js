@@ -63,7 +63,7 @@ const ResultsScreen = props => {
 
   if (loading || error || results === null) {
     return (
-      <View style={[styles.activityContainer, styles.horizontal]}>
+      <View style={styles.activityContainer}>
         <ActivityIndicator size="large" color={theme.primary} />
       </View>
     )
@@ -90,9 +90,6 @@ const styles = StyleSheet.create({
   },
   activityContainer: {
     flex: 1,
-    justifyContent: "center"
-  },
-  horizontal: {
     flexDirection: "row",
     justifyContent: "space-around",
     padding: 10

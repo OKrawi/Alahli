@@ -53,7 +53,7 @@
         },
         "validators": {
             "numerical": "Please enter a valid number",
-            "date": "Please enter a valid date DD/MM/YYYY",
+            "date": "Please enter your birth date DD/MM/YYYY",
             "date_placeholder": "DD/MM/YYYY",
             "validator_job": "Please select your job",
             "validator_rank": "Please select your rank"
@@ -65,7 +65,7 @@
         },
         "settings":{
             "warning": "Warning!",
-            "language_change_warning": "App will restart. Continue",
+            "language_change_warning": "App will restart. Continue?",
             "affirmative": "yes",
             "negative": "no",
             "select_lang": "Select your language:",
@@ -79,6 +79,10 @@
             "intro": "My name is Ossama Krawi and I'm a React Native developer. This small application is Aqar's \"Alahli Bank Mortgage Calculator Challenge\".",
             "prompt": "If you liked this demo and wish to contact me, you can reach me at:",
             "phone": "Phone: 00966500198465   "
+        },
+        "error":{
+            "error_occured": "An error occured!",
+            "ok": "OK"
         }
     }
 }

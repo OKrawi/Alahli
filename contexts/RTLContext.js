@@ -16,7 +16,7 @@ export function RTLProvider({ children }) {
                 setRTL(JSON.parse(value));
             }
         }).catch(e => console.log(e))
-    })
+    });
 
     return (
         <RTLContext.Provider value={rtl}>

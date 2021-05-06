@@ -30,7 +30,7 @@ const InputResultsTable = (props) => {
                         <Text style={{ ...styles.tableTextLeft, textAlign: leftText, color: theme.primary }}>{t('alahli_calc.alahli_calc_no')}</Text>}
                 </View>
                 <View style={{ ...styles.tableItem, flexDirection: flexDirection }}>
-                    <Text style={{ ...styles.tableTextRight, textAlign: rightText }}>{t('alahli_calc.alahli_calc_birthdate')}</Text>
+                    <Text style={{ ...styles.tableTextRight, textAlign: rightText, flex: 1.1 }}>{t('alahli_calc.alahli_calc_birthdate')}</Text>
                     <Text style={{ ...styles.tableTextLeft, textAlign: leftText, color: theme.primary }}>{date.toString()}</Text>
                 </View>
             </View>

@@ -1,13 +1,17 @@
 export function getFormatedDate(epochValue) {
     const unformated_date = new Date(Number(epochValue));
-    return (unformated_date.getUTCDate() + 1) + '/' + (unformated_date.getUTCMonth() + 1) + '/' + unformated_date.getUTCFullYear();
+
+    const d = ("0"+String(unformated_date.getDate())).slice(-2);
+    const m = ("0"+String(unformated_date.getMonth() + 1)).slice(-2);
+    const y = unformated_date.getFullYear();
+    return `${d}/${m}/${y}`;
 }
 
 export function getTotalLoanCosts(results) {
-    return (
-        (results.monthlyInstalmentsDuringPersonalFinancingPeriod * results.tenorDuringPersonalFinancingPeriodMonths) +
-        (results.monthlyInstalmentsAfterPersonalFinancingMatures * results.tenorAfterPersonalFinancingMonths) +
-        (results.monthlyInstalmentsAfterRetirement * results.tenorAfterRetirementMonths)
+      return (
+        (Number(results.MonthlyInstalmentsDuringPersonalFinancingPeriod) * Number(results.TenorDuringPersonalFinancingPeriodMonths)) +
+        (Number(results.MonthlyInstalmentsAfterPersonalFinancingMatures) * Number(results.TenorAfterPersonalFinancingMonths)) +
+        (Number(results.MonthlyInstalmentsAfterRetirement) * Number(results.TenorAfterRetirementMonths))
     );
 }
 

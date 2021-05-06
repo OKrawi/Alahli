@@ -14,6 +14,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.15",
     "@react-native-async-storage/async-storage": "^1.15.4",
+    "@react-native-community/datetimepicker": "^3.4.7",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/drawer": "^5.12.5",
     "@react-navigation/native": "^5.9.4",
@@ -23,8 +24,8 @@
     "expo-status-bar": "~1.0.4",
     "fiction-expo-restart": "^1.0.9",
     "graphql": "^15.5.0",
+    "hijrah-date": "^1.0.3",
     "i18next": "^20.2.2",
-    "moment-hijri": "^2.1.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-i18next": "^11.8.15",

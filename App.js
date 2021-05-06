@@ -15,11 +15,11 @@ import AppNavigator from './navigation/AppNavigator';
 import AppLoading from 'expo-app-loading';
 
 import * as Font from 'expo-font';
-import { prodURI, devURI } from './keys'
+import keys from './keys'
 import calculatorReducer from './store/reducers/calculation';
 
 const client = new ApolloClient({
-  uri: process.env.NODE_ENV === 'production' ? prodURI : devURI,
+  uri: process.env.NODE_ENV === 'production' ? keys.prodURI : keys.devURI,
   cache: new InMemoryCache({
     typePolicies: {
       Query: {
@@ -49,7 +49,7 @@ const fetchFonts = () => {
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
-
+  
   if (!fontLoaded) {
     return (
       <AppLoading

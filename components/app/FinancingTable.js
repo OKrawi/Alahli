@@ -12,6 +12,7 @@ const FinancingTable = (props) => {
     const theme = useTheme();
 
     const total_loan_cost = getTotalLoanCosts(props.results);
+    console.log(total_loan_cost);
 
     const flexDirection = rtl ? 'row-reverse' : 'row';
     const leftText = rtl ? 'left' : 'right';

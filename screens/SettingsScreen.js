@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { View, StyleSheet, Text, Button, Alert, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Alert, TouchableOpacity } from 'react-native';
 import { useTheme, useThemeUpdate } from '../contexts/ThemeContext'
 import { useRTL } from '../contexts/RTLContext';
 import { Restart } from 'fiction-expo-restart';
